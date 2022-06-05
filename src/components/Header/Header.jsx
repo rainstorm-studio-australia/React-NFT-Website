@@ -19,12 +19,12 @@ const NAV__LINKS = [
   {
     display: "Contact",
     url: "/contact",
-  }
+  },
 ];
 
 const Header = () => {
   return (
-    <header classname="header">
+    <header className="header">
       <Container>
         <div className="navigation">
           <div className="logo">
@@ -37,27 +37,32 @@ const Header = () => {
           </div>
 
           <div className="nav__menu">
-            <ul className="nav_list">
+            <ul className="nav__list">
               {NAV__LINKS.map((item, index) => (
                 <li className="nav__item" key={index}>
-                  <NavLink to={item.url}>{item.display}</NavLink>
+                  <NavLink
+                    to={item.url}
+                    className={(navClass) =>
+                      navClass.isActive ? "active" : ""
+                    }
+                  >
+                    {item.display}
+                  </NavLink>
                 </li>
               ))}
             </ul>
           </div>
 
           <div className="nav__right d-flex align-items-center gap-5">
-            <button className="btn">
-              <Link to="/wallet" className="d-flex gap-2 align-items-center">
-                <span>
-                  <i className="ri-wallet-line"></i>
-                </span>
-              </Link>
-              Connect Wallet
+            <button className="btn d-flex gap-2 align-items-center">
+              <span>
+                <i className="ri-wallet-line"></i>
+              </span>
+              <Link to="/wallet">Connect Wallet</Link>
             </button>
 
             <span className="mobile__menu">
-            <i className="ri-menu-line"></i>
+              <i className="ri-menu-line"></i>
             </span>
           </div>
         </div>
