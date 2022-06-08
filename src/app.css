@@ -11,7 +11,8 @@ body {
     font-family: "Roboto", sans-serif;
 }
 
-h1, h2 {
+h1,
+h2 {
     color: #fff;
     font-weight: 500;
     font-size: 2rem;
@@ -40,6 +41,18 @@ ul {
     margin: 0;
 }
 
-section, footer {
+section,
+footer {
     padding: 60px 0px;
+}
+
+/* custom scroll-bar */
+::-webkit-scrollbar {
+    width: 10px;
+    background: #343444;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 2em;
+    background: linear-gradient(-45deg, #e250e5, #4b50e6, #e250e5, #4b50e6);
 }
